@@ -4,6 +4,8 @@ import pe.io.running.Formulas;
 
 public class Calculadora{
     
+    //Creamos una clase para ejecutar los métodos:
+    
     //Vamos a crear los métodos de interes con un método sencillo:
     public int interes_simple(Formulas claseBean){
         //Esta es la fórmula en cuestión:
