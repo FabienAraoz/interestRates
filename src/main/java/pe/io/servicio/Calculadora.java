@@ -10,7 +10,7 @@ public class Calculadora{
     public int interes_simple(Formulas claseBean){
         //Esta es la fórmula en cuestión:
         int monto;
-        monto = claseBean.getCapital() * claseBean.getnPeriodos() * claseBean.getTasa();
+        monto = (int) claseBean.getCapital() * claseBean.getnPeriodos() * (claseBean.getTasa()/100);
         return monto;
     }
     
