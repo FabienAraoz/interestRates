@@ -1,9 +1,9 @@
-package pe.io.fabien;
+package pe.io.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import pe.io.running.Formulas;
+import pe.io.Persona.Formulas;
 import pe.io.servicio.Calculadora;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
@@ -17,13 +17,13 @@ public class Servlet extends HttpServlet {
         //Ceramos un Objeto prueba:
         Formulas objetoUsuario = new Formulas();
 
-        objetoUsuario.setCapital(Integer.parseInt(request.getParameter("userCapital")));
-        objetoUsuario.setTasa(Integer.parseInt(request.getParameter("userInterest")));
-        objetoUsuario.setnPeriodos(Integer.parseInt(request.getParameter("userTimes")));
+        objetoUsuario.setCapital((int) Float.parseFloat(request.getParameter("userCapital")));
+        objetoUsuario.setTasa((int) Float.parseFloat(request.getParameter("userInterest")));
+        objetoUsuario.setnPeriodos((int) Float.parseFloat(request.getParameter("userTimes")));
 
         //Damos a ejecutar el método de interes Simple:
         Calculadora test = new Calculadora();
-        int resultado;
+        float resultado;
         resultado =test.interes_simple(objetoUsuario);
 
         //Reenviamos el formulario a un nuevo HTML [sin jsp]:
@@ -36,5 +36,6 @@ public class Servlet extends HttpServlet {
         out.println("<p>Espero lo disfrutes.... felicidades: <p>");
         out.println("</body>");
         out.println("</html>");
+        //esta doc nos podría interesar: https://documentacion.fundacionmapfre.org/documentacion/publico/en/bib/23118.do?format=mods
     }
 }

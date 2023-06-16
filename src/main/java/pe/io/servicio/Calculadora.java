@@ -1,24 +1,23 @@
 package pe.io.servicio; 
 
-import pe.io.running.Formulas;
+import pe.io.Persona.Formulas;
 
 public class Calculadora{
     
     //Creamos una clase para ejecutar los métodos:
     
     //Vamos a crear los métodos de interes con un método sencillo:
-    public int interes_simple(Formulas claseBean){
-        //Esta es la fórmula en cuestión:
-        int monto;
-        monto = (int) claseBean.getCapital() * claseBean.getnPeriodos() * (claseBean.getTasa()/100);
+    public float interes_simple(Formulas claseBean){
+        float monto;
+        monto = (claseBean.getCapital() * (1+((claseBean.getTasa()/100)*claseBean.getnPeriodos())));
         return monto;
     }
     
-    //Esta es la función para el monto de interés compuesto:
-    public int interes_compuesto(Formulas claseBean){
-        int monto;
-        //Hacemos (casting) por [Conversión explícita]:
-        monto =(int) ((int) claseBean.getCapital() * ((1+claseBean.getTasa())*Math.exp(claseBean.getnPeriodos())));
+    //Esta es la función para el monto de interés compuesto: (cambiamos a float)
+    public float interes_compuesto(Formulas claseBean){
+        float monto;
+        //Hacemos un cast en Float:
+        monto = (float) ( claseBean.getCapital() * ((1+(claseBean.getTasa()/100))*Math.exp(claseBean.getnPeriodos())));
         return monto;
     }
     

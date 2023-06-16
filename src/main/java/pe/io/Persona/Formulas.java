@@ -1,18 +1,18 @@
-package pe.io.running; 
+package pe.io.Persona; 
 
 public class Formulas{
     
-    //Declaramos las variables para el interés simple o compuesto:
-    private int capital;
-    private int tasa;
-    private int nPeriodos;
+    //Convertimos todas las variables a float:
+    private float capital;
+    private float tasa;
+    private float nPeriodos;
 
     public Formulas(){
         
     }
     
     //Con esto se puede ya hacer objetos variable:
-    public Formulas(int capital, int tasa, int nPeriodos) {
+    public Formulas(float capital, float tasa, float nPeriodos) {
         this.capital = capital;
         this.tasa = tasa;
         this.nPeriodos = nPeriodos;
@@ -20,7 +20,7 @@ public class Formulas{
 
     //Creamos los métodos Getters and Setters():
 
-    public int getCapital() {
+    public float getCapital() {
         return capital;
     }
 
@@ -28,7 +28,7 @@ public class Formulas{
         this.capital = capital;
     }
 
-    public int getTasa() {
+    public float getTasa() {
         return tasa;
     }
 
@@ -36,7 +36,7 @@ public class Formulas{
         this.tasa = tasa;
     }
 
-    public int getnPeriodos() {
+    public float getnPeriodos() {
         return nPeriodos;
     }
 
