@@ -19,7 +19,7 @@ public class Formulas{
     }
 
     //Creamos los métodos Getters and Setters():
-
+    //Simplemente coloqué un comentario desde el mismo GitHub (ingorar).
     public float getCapital() {
         return capital;
     }
