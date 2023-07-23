@@ -24,7 +24,7 @@ public class Formulas{
         return capital;
     }
 
-    public void setCapital(int capital) {
+    public void setCapital(float capital) {
         this.capital = capital;
     }
 
@@ -32,7 +32,7 @@ public class Formulas{
         return tasa;
     }
 
-    public void setTasa(int tasa) {
+    public void setTasa(float tasa) {
         this.tasa = tasa;
     }
 
@@ -40,7 +40,7 @@ public class Formulas{
         return nPeriodos;
     }
 
-    public void setnPeriodos(int nPeriodos) {
+    public void setnPeriodos(float nPeriodos) {
         this.nPeriodos = nPeriodos;
     }
     

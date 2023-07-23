@@ -17,9 +17,9 @@ public class Servlet extends HttpServlet {
         //Ceramos un Objeto prueba:
         Formulas objetoUsuario = new Formulas();
 
-        objetoUsuario.setCapital((int) Float.parseFloat(request.getParameter("userCapital")));
-        objetoUsuario.setTasa((int) Float.parseFloat(request.getParameter("userInterest")));
-        objetoUsuario.setnPeriodos((int) Float.parseFloat(request.getParameter("userTimes")));
+        objetoUsuario.setCapital(Float.parseFloat(request.getParameter("userCapital")));
+        objetoUsuario.setTasa(Float.parseFloat(request.getParameter("userInterest")));
+        objetoUsuario.setnPeriodos(Float.parseFloat(request.getParameter("userTimes")));
 
         //Damos a ejecutar el método de interes Simple:
         Calculadora test = new Calculadora();
