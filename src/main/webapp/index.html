@@ -6,15 +6,19 @@
     </head>
     <body>
         <h1>Servlet TESTING with java:</h1>
-        <!--Creamos un form para enviar la petición al servlet:-->
-        <form action="procesador" method="POST">
-            <!-- Campos del formulario -->
-            <input type="text" name="userCapital" placeholder="capital"/>
-            <input type="text" name="userInterest" placeholder="interes"/>
-            <input type="text" name="userTimes" placeholder="periodos"/>
-            <!-- Botón para enviar el formulario -->
-            <input type="submit" value="Calcular!" />
-        </form>
+        <div class="formulario">
+            <!--Creamos un form para enviar la petición al servlet:-->
+            <form action="procesador" method="POST">
+                <!-- Campos del formulario -->
+                <input type="text" name="userCapital" placeholder="capital"/>
+                <input type="text" name="userInterest" placeholder="interes"/>
+                <input type="text" name="userTimes" placeholder="periodos"/>
+                <!-- Este botón es para el interés simple-->
+                <input type="submit" name="calcular" value="interesSimple" />
+                <!--Este botón es para el interés compuesto: -->
+                <input type="submit" name="calcular" value="interesCompuesto"/>
+            </form>
+        </div>
 
     </body>
 </html>

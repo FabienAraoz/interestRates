@@ -17,7 +17,7 @@ public class Calculadora{
     public float interes_compuesto(Formulas claseBean){
         float monto;
         //Hacemos un cast en Float:
-        monto = (float) ( claseBean.getCapital() * ((1+(claseBean.getTasa()/100))*Math.exp(claseBean.getnPeriodos())));
+        monto = (float) ( claseBean.getCapital() * (Math.pow((1+(claseBean.getTasa()/100)),claseBean.getnPeriodos())));
         return monto;
     }
     

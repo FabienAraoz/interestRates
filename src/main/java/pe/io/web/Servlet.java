@@ -21,11 +21,17 @@ public class Servlet extends HttpServlet {
         objetoUsuario.setTasa(Float.parseFloat(request.getParameter("userInterest")));
         objetoUsuario.setnPeriodos(Float.parseFloat(request.getParameter("userTimes")));
 
-        //Damos a ejecutar el método de interes Simple:
         Calculadora test = new Calculadora();
-        float resultado;
-        resultado =test.interes_simple(objetoUsuario);
+        float resultado = 0;
+        String valorBoton = request.getParameter("calcular");
+        //Realizamos la condicional para el interés simple y compuesto:
 
+        if("interesSimple".equals(valorBoton)){
+            resultado =test.interes_simple(objetoUsuario);            
+        }
+        else if("interesCompuesto".equals(valorBoton)){
+            resultado = test.interes_compuesto(objetoUsuario);            
+        }
         //Reenviamos el formulario a un nuevo HTML [sin jsp]:
         response.setContentType("text/html");
 
