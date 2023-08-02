@@ -23,13 +23,14 @@ public class Servlet extends HttpServlet {
 
         Calculadora test = new Calculadora();
         float resultado = 0;
-        String valorBoton = request.getParameter("calcular");
+        String valorBoton = request.getParameter("simple");
+        String valorBoton2 = request.getParameter("compuesto");
         //Realizamos la condicional para el interés simple y compuesto:
 
         if("interesSimple".equals(valorBoton)){
             resultado =test.interes_simple(objetoUsuario);            
         }
-        else if("interesCompuesto".equals(valorBoton)){
+        if("interesCompuesto".equals(valorBoton2)){
             resultado = test.interes_compuesto(objetoUsuario);            
         }
         //Reenviamos el formulario a un nuevo HTML [sin jsp]:
