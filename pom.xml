@@ -5,7 +5,7 @@
     <artifactId>ArrayPersonaServlet</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>ArrayPersonaServlet-1.0</name>
+    <name>ArrayPersonaServlet</name>
     
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
