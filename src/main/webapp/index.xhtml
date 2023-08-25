@@ -7,21 +7,26 @@
     </h:head>
     <h:body>
         <h:outputLabel value="Hola mundo desde un JSF"/>
-        <body>
         <h1>Servlet TESTING with java:</h1>
         <div class="formulario">
-            <!--Creamos un form para enviar la petición al servlet:-->
-            <form action="procesador" method="POST">
-                <!-- Campos del formulario -->
-                <input type="text" name="userCapital" placeholder="capital"/>
-                <input type="text" name="userInterest" placeholder="interes"/>
-                <input type="text" name="userTimes" placeholder="periodos"/>
-                <!-- Este botón es para el interés simple-->
-                <input type="submit" name="simple" value="interesSimple" />
-                <!--Este botón es para el interés compuesto: -->
-                <input type="submit" name="compuesto" value="interesCompuesto"/>
-            </form>
+            <!--Creamos un Form para poder utilizar AJAX-->
+            <h:form >
+                <table>
+                    <tr>
+                        <td><h:outputLabel value="Capital"/></td>
+                        <td><h:inputText value="#{formulasBean.formulas.capital}" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Tasa"/></td>
+                        <td><h:inputText value="#{formulasBean.formulas.tasa}" /></td>
+                    </tr>
+                    <tr>
+                        <td>Número de períodos:</td>
+                        <td><h:inputText value="#{formulasBean.formulas.nPeriodos}"/></td>
+                    </tr>
+                </table>
+                <h:commandButton value="Calcular" action="#{formulasBean.calcularAlgo}" />
+            </h:form>
         </div>
-    </body>
     </h:body>
 </html>
