@@ -1,6 +1,8 @@
 package pe.io.servicio; 
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import pe.io.Persona.Formulas;
@@ -31,12 +33,17 @@ public class Calculadora{
 
     public String enviar(){
         if((this.formula.getCapital())>100.00){
-            
-            
+            //Vamos a textear con un texto plano:
+            String msg = "Es correcto, tienes más de 100 pavos de capital:";
+            FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR,msg, msg);
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            String componendId = null;
+            facesContext.addMessage(componendId, facesMessage);
+            return "exito";
         }else{
-            
+            //Ok se sesupone que con esto debería funcionar
+            return "fracaso";
         }
-        return null;
     }
     
     //Vamos a crear los métodos de interes con un método sencillo:
