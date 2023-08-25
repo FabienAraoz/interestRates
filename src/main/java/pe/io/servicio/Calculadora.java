@@ -1,10 +1,43 @@
 package pe.io.servicio; 
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import pe.io.Persona.Formulas;
 
+
+@Named
+@RequestScoped
 public class Calculadora{
     
-    //Creamos una clase para ejecutar los métodos:
+    /*
+        Tenemos que reestructurar toda la clase para realizar la ejecución del  Bean en JSF:
+    */
+    
+    @Inject
+    private Formulas formula;
+    
+    public Calculadora(){
+    }
+    
+    //setter para la clase Formula:
+    public void setFormula(Formulas newFormula){
+        this.formula = newFormula;
+    }
+    
+    /*
+        Creamos el método para poder redirigir la página y calculamos el interés:
+    */
+
+    public String enviar(){
+        if((this.formula.getCapital())>100.00){
+            
+            
+        }else{
+            
+        }
+        return null;
+    }
     
     //Vamos a crear los métodos de interes con un método sencillo:
     public float interes_simple(Formulas claseBean){

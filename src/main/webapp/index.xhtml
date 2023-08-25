@@ -13,19 +13,24 @@
             <h:form >
                 <table>
                     <tr>
-                        <td><h:outputLabel value="Capital"/></td>
-                        <td><h:inputText value="#{formulasBean.formulas.capital}" /></td>
+                        <td><h:outputLabel for="capital" value="Capital"/></td>
+                        <td><h:inputText id="capital" value="#{formulas.capital}"  /></td>
+                        <td><h:message for="capital"/></td>
                     </tr>
                     <tr>
-                        <td><h:outputLabel value="Tasa"/></td>
-                        <td><h:inputText value="#{formulasBean.formulas.tasa}" /></td>
+                        <td><h:outputLabel for="tasa" value="Tasa"/></td>
+                        <td><h:inputText id="tasa" value="#{formulas.tasa}" /></td>
+                        <td><h:message for="tasa"/></td>
                     </tr>
                     <tr>
-                        <td>Número de períodos:</td>
-                        <td><h:inputText value="#{formulasBean.formulas.nPeriodos}"/></td>
+                        <td><h:outputLabel for="nPeriodos" value="nº Periodos"/></td>
+                        <td><h:inputText id="nPeriodos" value="#{formulas.nPeriodos}"/></td>
+                        <td><h:message for="nPeriodos"/></td>
                     </tr>
                 </table>
-                <h:commandButton value="Calcular" action="#{formulasBean.calcularAlgo}" />
+                
+                <!--Creamos un Botton para ralizar la tarea de cálculo de interés.-->
+                <h:commandButton action="#{calculadora.interes_simple}" value="Calcular!"/>
             </h:form>
         </div>
     </h:body>
