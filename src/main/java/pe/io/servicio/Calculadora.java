@@ -2,6 +2,7 @@ package pe.io.servicio;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +11,7 @@ import pe.io.Persona.Formulas;
 
 @Named
 @RequestScoped
+@ManagedBean
 public class Calculadora{
     
     /*
