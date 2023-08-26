@@ -2,7 +2,6 @@ package pe.io.servicio;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -11,7 +10,6 @@ import pe.io.Persona.Formulas;
 
 @Named
 @RequestScoped
-@ManagedBean
 public class Calculadora{
     
     /*
@@ -19,14 +17,14 @@ public class Calculadora{
     */
     
     @Inject
-    private Formulas formula;
+    private Formulas formulas;
     
     public Calculadora(){
     }
     
     //setter para la clase Formula:
-    public void setFormula(Formulas newFormula){
-        this.formula = newFormula;
+    public void setFormulas(Formulas newFormula){
+        this.formulas = newFormula;
     }
     
     /*
@@ -34,17 +32,19 @@ public class Calculadora{
     */
 
     public String enviar(){
-        if((this.formula.getCapital())>100.00){
+        if((this.formulas.getCapital())>100.00){
+            if(this.formulas.getTasa()>2.5){
             //Vamos a textear con un texto plano:
             String msg = "Es correcto, tienes más de 100 pavos de capital:";
             FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR,msg, msg);
             FacesContext facesContext = FacesContext.getCurrentInstance();
             String componendId = null;
             facesContext.addMessage(componendId, facesMessage);
-            return "exito";
+            }
+            return "exito";            
         }else{
             //Ok se sesupone que con esto debería funcionar
-            return "fracaso";
+            return "exito";
         }
     }
     

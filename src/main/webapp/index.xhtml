@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
     <h:head>
         <title>Realizamos un servlet</title>
     <link rel="stylesheet" href="resources/css/estilos.css"/>        
@@ -10,21 +13,22 @@
         <h1>Servlet TESTING with java:</h1>
         <div class="formulario">
             <!--Creamos un Form para poder utilizar AJAX-->
-            <h:form id="calculadora">
+            <h:form>
+                <h:messages globalOnly="true"/>
                 <table>
                     <tr>
                         <td><h:outputLabel for="capital" value="Capital"/></td>
-                        <td><h:inputText id="capital" value="#{formula.capital}"  /></td>
+                        <td><h:inputText id="capital" value="#{formulas.capital}"  /></td>
                         <td><h:message for="capital"/></td>
                     </tr>
                     <tr>
                         <td><h:outputLabel for="tasa" value="Tasa"/></td>
-                        <td><h:inputText id="tasa" value="#{formula.tasa}" /></td>
+                        <td><h:inputText id="tasa" value="#{formulas.tasa}" /></td>
                         <td><h:message for="tasa"/></td>
                     </tr>
                     <tr>
                         <td><h:outputLabel for="nPeriodos" value="nº Periodos"/></td>
-                        <td><h:inputText id="nPeriodos" value="#{formula.nPeriodos}"/></td>
+                        <td><h:inputText id="nPeriodos" value="#{formulas.nPeriodos}"/></td>
                         <td><h:message for="nPeriodos"/></td>
                     </tr>
                 </table>
