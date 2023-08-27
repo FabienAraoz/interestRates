@@ -9,8 +9,35 @@
     </head>
     <body>
         <h:form>
-            Exelente, esto es un caso de Éxito:
-            <h:commandLink action="index">regresar</h:commandLink>
+            <table>
+                <tr>
+                    <td><span class="">Resultado del cálculo:</span></td>
+                    <td>Interés Compueto: </td>
+                    <td>#{calculadora.interes_compuesto(formulas)} </td>
+                </tr>
+                <tr>
+                    <td>Interés Simple: </td>
+                    <td>#{calculadora.interes_simple(formulas)}</td>
+                </tr>
+                    <br/>
+                    <br/>
+                    <tr><td>La diferencia es:</td><td>#{ calculadora.interes_compuesto(formulas)-calculadora.interes_simple(formulas)}</td> </tr>
+                <tr>
+                    <td><span class="">En donde:</span></td>
+                </tr>
+                <tr>
+                    <td>Capital: #{formulas.capital}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Interés: #{formulas.tasa}
+                    </td>
+                </tr>
+                <tr>
+                    <td>nº Periodos: #{formulas.getnPeriodos()}</td>
+                </tr>
+            </table>
+            <h:commandLink action="index">Regresar a la calculadora</h:commandLink>
         </h:form>
     </body>
 </html>
