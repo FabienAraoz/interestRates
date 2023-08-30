@@ -41,10 +41,10 @@ public class Calculadora{
             String componendId = null;
             facesContext.addMessage(componendId, facesMessage);
             }
-            return "exito";            
+            return "index";            
         }else{
             //Ok se sesupone que con esto debería funcionar
-            return "exito";
+            return "index";
         }
     }
     

@@ -36,6 +36,9 @@
                 <!--Creamos un Botton para ralizar la tarea de cálculo de interés.-->
                 <h:commandButton action="#{calculadora.enviar}" value="Calcular!" id="calculadora"/>
             </h:form>
+            
+            <!--Para testear si podemos colocar un objeto en la aplicación de java.-->
+            <h:outputLabel value="Resultado: #{calculadora.interes_compuesto(formulas)}"/>
         </div>
     </h:body>
 </html>
