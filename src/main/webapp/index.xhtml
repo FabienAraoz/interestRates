@@ -17,7 +17,7 @@
                 <h:messages globalOnly="true"/>
                 <table>
                     <tr>
-                        <td><h:outputLabel for="capital" value="Capital"/></td>
+                        <td><h:outputLabel for="capital" value="Capital" /></td>
                         <td><h:inputText id="capital" value="#{formulas.capital}"  /></td>
                         <td><h:message for="capital"/></td>
                     </tr>
@@ -34,11 +34,12 @@
                 </table>
                 
                 <!--Creamos un Botton para ralizar la tarea de cálculo de interés.-->
-                <h:commandButton action="#{calculadora.enviar}" value="Calcular!" id="calculadora"/>
+                <h:commandButton action="#{calculadora.enviar}" value="Calcular!" id="calculadora">
+                    <f:ajax execute="capital tasa nPeriodos" render="resultado"/>
+                </h:commandButton>
             </h:form>
-            
-            <!--Para testear si podemos colocar un objeto en la aplicación de java.-->
-            <h:outputLabel value="Resultado: #{calculadora.interes_compuesto(formulas)}"/>
+            <!--Vamos a realizar un test primero observando solo el capital-->
+            <h:outputLabel value="Resultado: #{calculadora.interes_compuesto(formulas)}" id="resultado"/>
         </div>
     </h:body>
 </html>
