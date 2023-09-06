@@ -73,3 +73,37 @@ body{
     cursor: pointer; /*Para que aparezca la manita arriba del cursor*/
     display: none;
 }
+
+/*
+    Aquí empezamos a trabajar con un Media Query
+*/
+
+@media(max-width: 991px){
+    .menu{
+        padding: 30px;
+    }
+
+    .menu label{
+        display: initial; /*Menú hambuerguesa*/
+    }
+    .back{
+        padding: 48px;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2A394F;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;/*Para colocarlo en vertical*/
+    }
+    /*Para crear un componente*/
+    #menu:checked~ .navbar{
+        display: initial;
+    }
+}
