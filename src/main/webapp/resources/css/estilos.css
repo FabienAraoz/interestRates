@@ -1,34 +1,75 @@
-body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: graytext;
-        }
-        
-        header {
-            background-color: #3498db; /* Azul */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        main {
-            background-color: #f1f1f1; /* Azul claro */
-            padding: 20px;
-        }
-        
-        article {
-            text-align: center;
-            color: #fff;
-            background-color: #2980b9; /* Otro tono de azul */
-            font-family: serif;
-            font-size: 1.75em;
-            padding: 20px;
-        }
-        
-        footer {
-            background-color: #16a085; /* Cian */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*Buena práctica para colocar bien el padding*/
+    text-decoration: none; /*Para eliminar el subrayado de los enlaces*/
+    list-style: none; /*Para eliminar las bolitas de las listas*/
+}
+
+body{
+    /*Para que el cuerpo tenga un gradiente luminoso*/
+    background: linear-gradient(
+        90deg,
+        rgba(166,93,234,1) 25%,
+        rgba(207,103,235,1) 73%
+        );
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width: 1100px;/*Para que no se desborde a los lados*/
+    margin: 0 auto;
+}
+
+.back{
+    padding: 32px 0;
+    background-color: #2A394F;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;/*Flex-box: Para colocar los elementos de forma horizontal*/
+    align-items: center;
+    justify-content: space-between;/*Para que haya espacio entre nuestros elementos:*/
+    z-index: 1000;/*Para que aparezca siempre primero*/
+}
+
+.logo{
+    font-size: 24px;
+    color: #15A4F9;
+    font-weight: 800;
+    text-transform: uppercase;/*Indicamos qu elo queremos en mayusculas*/
+}
+
+/*Para el menu de nuestras listas*/
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+/*Para es estilo de los enlaces*/
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    display: block;/*Para centar al medio y*/
+}
+/*Para crera un efecto Hover: Cada vez que pasemos el Maus, se cambie el color*/
+.menu .navbar ul li a:hover{
+    color: #15A4F9;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer; /*Para que aparezca la manita arriba del cursor*/
+    display: none;
+}
