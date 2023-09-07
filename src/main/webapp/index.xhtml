@@ -5,9 +5,33 @@
       >
     <h:head>
         <title>Realizamos un servlet</title>
-    <link rel="stylesheet" href="resources/css/estilos.css"/>        
+        <h:outputStylesheet library="css" name="estilos.css" />
     </h:head>
     <h:body>
+        <!-- Vamos a implementar el Header en nuestro proyecto: ++style-->
+        <h:form>
+            <header>
+                <div class="back">
+                    <div class="menu container">
+                        <a href="#" class="logo">logazo</a>
+                        <h:selectBooleanCheckbox id="menu" styleClass="hidden-checkbox"/>
+                        <!-- Label, que hace referencia al id-menu de arriba -->
+                        <label for="menu">
+                            <img src="resources/images/menu.png" class="menu-icono" alt=""/>
+                        </label>
+                        <!-- Para realizar la barra de navegación del Header -->
+                        <nav class="navbar">
+                            <ul>
+                                <li><h:link value="Index" outcome="index.xhtml" /></li>
+                                <li><h:link value="Éxito" outcome="exito.xhtml" /></li>
+                                <li><a href="http://www.unsa.edu.pe" target="_blank">Salida</a></li>
+                                <li><a href="http://www.github.com/fabienaraoz" target="_blank">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </h:form>
         <h:outputLabel value="Hola mundo desde un JSF"/>
         <h1>Servlet TESTING with java:</h1>
         <div class="formulario">
@@ -31,7 +55,7 @@
                         <td><h:message for="nPeriodos"/></td>
                     </tr>
                 </table>
-                
+
                 <!--Creamos un Botton para ralizar la tarea de cálculo de interés.-->
                 <h:commandButton action="#{calculadora.enviar}" value="Calcular!" id="calculadora">
                     <f:ajax execute="capital tasa nPeriodos" render="resultado"/>
