@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Anualidades financieras</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Hola, este es un output label para la aplicación de Java"/>
+        
+        <!-- Comenzamos a relaizar la tabla para los valores de las anualidades-->
+        <div>
+            <h:form>
+                <table>
+                    <tr>
+                        <td><h:outputLabel for="pagoAnualildad" value="pagoAnualidad"/> </td>
+                        <td><h:inputText id="pagoAnualidad"/> </td>
+                        <td><h:message for="pagoAnualidad"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="nPeriodos" value="nPeriodos"/> </td>
+                        <td><h:inputText id="nPeriodos"/> </td>
+                        <td><h:message for="nPeriodos"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="tasa" value="tasa"/> </td>
+                        <td><h:inputText id="tasa"/> </td>
+                        <td><h:message for="tasa"/></td>
+                    </tr>
+                </table>
+            </h:form>
+        </div>
+    </h:body>
+</html>
