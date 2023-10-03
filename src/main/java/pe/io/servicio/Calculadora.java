@@ -41,11 +41,28 @@ public class Calculadora{
             String componendId = null;
             facesContext.addMessage(componendId, facesMessage);
             }
-            return "index";            
+            return "index";
         }else{
             //Ok se sesupone que con esto debería funcionar
             return "index";
         }
+    }
+    
+    /*
+        Creamos el método para las anualidades:
+    */
+    public String enviarAnualidades(){
+        if(this.formulas.getPagoAnualidad()>10){
+            if(this.formulas.getTasa()>1.0){
+                String msg = "Tienes capital aceptable, en tasa!";
+                        FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg);
+                        FacesContext facesContext = FacesContext.getCurrentInstance();
+                        String componendId = null;
+                        facesContext.addMessage(componendId, facesMessage);
+            }
+            return "index";
+        }
+        return "index";
     }
     
     //Vamos a crear los métodos de interes con un método sencillo:

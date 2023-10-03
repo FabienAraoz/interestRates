@@ -15,19 +15,22 @@
                 <table>
                     <tr>
                         <td><h:outputLabel for="pagoAnualildad" value="pagoAnualidad"/> </td>
-                        <td><h:inputText id="pagoAnualidad"/> </td>
+                        <td><h:inputText id="pagoAnualidad" value="#{formulas.pagoAnualidad}"/> </td>
                         <td><h:message for="pagoAnualidad"/></td>
                     </tr>
                     <tr>
                         <td><h:outputLabel for="nPeriodos" value="nPeriodos"/> </td>
-                        <td><h:inputText id="nPeriodos"/> </td>
+                        <td><h:inputText id="nPeriodos" value="#{formulas.nPeriodos}"/> </td>
                         <td><h:message for="nPeriodos"/></td>
                     </tr>
                     <tr>
                         <td><h:outputLabel for="tasa" value="tasa"/> </td>
-                        <td><h:inputText id="tasa"/> </td>
+                        <td><h:inputText id="tasa" value="#{formulas.tasa}"/> </td>
                         <td><h:message for="tasa"/></td>
                     </tr>
+                    
+                    <!--Agregamos el boton-->
+                    <h:commandButton action="#{calculadora}"/>
                 </table>
             </h:form>
         </div>

@@ -11,7 +11,9 @@ public class Formulas{
     private float capital;
     private float tasa;
     private float nPeriodos;
-
+    //Agregamos valores para las anualidades:
+    private float pagoAnualidad;
+    
     public Formulas(){
         
     }
@@ -48,13 +50,24 @@ public class Formulas{
     public void setnPeriodos(float nPeriodos) {
         this.nPeriodos = nPeriodos;
     }
-    
-    
+
+    public float getPagoAnualidad() {
+        return pagoAnualidad;
+    }
+
+    public void setPagoAnualidad(float pagoAnualidad) {
+        this.pagoAnualidad = pagoAnualidad;
+    }
     //Creamos un método toString(): Temporal:
 
     @Override
     public String toString() {
         return "Formulas{" + "capital=" + capital + ", tasa=" + tasa + ", nPeriodos=" + nPeriodos + '}';
+    }
+    
+    //Este toString es para la anualidad, (ojo aquí no hay capital):
+    public String toString(String a){
+        return "Formulas{" + "capital=" + capital + ", tasa=" + tasa + ", nPeriodos=" + nPeriodos + ", pagoAnualidad = "+pagoAnualidad+'}';
     }
     
 }
