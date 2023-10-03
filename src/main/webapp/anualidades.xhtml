@@ -30,8 +30,10 @@
                     </tr>
                     
                     <!--Agregamos el boton-->
-                    <h:commandButton action="#{calculadora.enviar}" value="¡Calcular!"/>
+                    <h:commandButton action="#{calculadora.enviarAnualidades}" value="¡Calcular!"/>
                 </table>
+                
+                <h:outputLabel value="Resultado: #{calculadora.anualidad_ordinaria(formulas)}"/>
             </h:form>
         </div>
     </h:body>

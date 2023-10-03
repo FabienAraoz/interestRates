@@ -41,10 +41,10 @@ public class Calculadora{
             String componendId = null;
             facesContext.addMessage(componendId, facesMessage);
             }
-            return "exito";
+            return "index";
         }else{
             //Ok se sesupone que con esto debería funcionar
-            return "exito";
+            return "index";
         }
     }
     
@@ -60,9 +60,9 @@ public class Calculadora{
                         String componendId = null;
                         facesContext.addMessage(componendId, facesMessage);
             }
-            return "index";
+            return "anualidades";
         }
-        return "index";
+        return "anualidades";
     }
     
     //Vamos a crear los métodos de interes con un método sencillo:
