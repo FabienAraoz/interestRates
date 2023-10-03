@@ -24,6 +24,14 @@ public class Formulas{
         this.tasa = tasa;
         this.nPeriodos = nPeriodos;
     }
+    
+    //Constructor para las Anualidades
+    public Formulas(float capital,float pagoAnualidades, float tasa, float nPeriodos){
+        this.capital = 100;
+        this.pagoAnualidad = pagoAnualidades;
+        this.tasa = tasa;
+        this.nPeriodos = nPeriodos;
+    }
 
     //Creamos los métodos Getters and Setters():
     //Simplemente coloqué un comentario desde el mismo GitHub (ingorar).
@@ -65,9 +73,5 @@ public class Formulas{
         return "Formulas{" + "capital=" + capital + ", tasa=" + tasa + ", nPeriodos=" + nPeriodos + '}';
     }
     
-    //Este toString es para la anualidad, (ojo aquí no hay capital):
-    public String toString(String a){
-        return "Formulas{" + "capital=" + capital + ", tasa=" + tasa + ", nPeriodos=" + nPeriodos + ", pagoAnualidad = "+pagoAnualidad+'}';
-    }
     
 }

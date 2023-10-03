@@ -36,6 +36,16 @@
                 <tr>
                     <td>nº Periodos: #{formulas.getnPeriodos()}</td>
                 </tr>
+                    <!--Esto es para la anualidad-->
+                <tr>
+                    <td>pago de Anualidad (OPCIONAL): #{formulas.getPagoAnualidad()}</td>
+                </tr>
+            </table>
+            <!--Para el pago de anualidades-->
+            <table>
+                <tr>
+                    <td>Resultado Anualidad: #{calculadora.anualidad_ordinaria(formulas)}</td>
+                </tr>
             </table>
             <h:commandLink action="index">Regresar a la calculadora</h:commandLink>
         </h:form>

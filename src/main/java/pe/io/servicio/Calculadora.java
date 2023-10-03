@@ -41,10 +41,10 @@ public class Calculadora{
             String componendId = null;
             facesContext.addMessage(componendId, facesMessage);
             }
-            return "index";
+            return "exito";
         }else{
             //Ok se sesupone que con esto debería funcionar
-            return "index";
+            return "exito";
         }
     }
     
@@ -77,6 +77,13 @@ public class Calculadora{
         float monto;
         //Hacemos un cast en Float:
         monto = (float) ( claseBean.getCapital() * (Math.pow((1+(claseBean.getTasa()/100)),claseBean.getnPeriodos())));
+        return monto;
+    }
+    
+    //Este es el método para generar anualidades ordinarias:
+    public float anualidad_ordinaria(Formulas claseBean){
+        float monto;
+        monto = (float)(claseBean.getPagoAnualidad()*(((Math.pow((1+(claseBean.getTasa()/100)),claseBean.getnPeriodos()))-1))/(claseBean.getTasa()/100));
         return monto;
     }
     
