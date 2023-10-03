@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Anualidades financieras</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -29,11 +29,14 @@
                         <td><h:message for="tasa"/></td>
                     </tr>
                     
-                    <!--Agregamos el boton-->
-                    <h:commandButton action="#{calculadora.enviarAnualidades}" value="¡Calcular!"/>
+                    <!--Agregamos el boton, También vamos a aplicar AJAX-->
+                    <h:commandButton action="#{calculadora.enviarAnualidades}" value="¡Calcular!" id="calculadora">
+                        <f:ajax execute="pagoAnualidad nPeriodos tasa" render="resultadito"/>
+                    </h:commandButton>
+                    
                 </table>
                 
-                <h:outputLabel value="Resultado: #{calculadora.anualidad_ordinaria(formulas)}"/>
+                <h:outputLabel value="Resultado: #{calculadora.anualidad_ordinaria(formulas)}" id="resultadito"/>
             </h:form>
         </div>
     </h:body>
