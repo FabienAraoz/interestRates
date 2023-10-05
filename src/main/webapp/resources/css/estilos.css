@@ -67,6 +67,8 @@ body{
 
 .menu-icono{
     width: 25px;
+    display: none;
+    /*Aquí hace falta acerlo desaparecer*/
 }
 
 .menu label{
