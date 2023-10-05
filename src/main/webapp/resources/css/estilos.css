@@ -67,8 +67,11 @@ body{
 
 .menu-icono{
     width: 25px;
+}
+
+/*Vamos a agregar el valor de ocultar el CheckBox*/
+.hidden-checkbox{
     display: none;
-    /*Aquí hace falta acerlo desaparecer*/
 }
 
 .menu label{
