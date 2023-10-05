@@ -8,37 +8,59 @@
         <h:outputStylesheet library="css" name="estilos.css"/>
     </h:head>
     <h:body>
-        <h:outputLabel value="Hola, este es un output label para la aplicación de Java"/>
+        <!--Vamos a crear el Header Anualidades-->
+        <h:form>
+            <header>
+                <div class="back">
+                    <div class="menu container">
+                        <a href="#" class="logo">logazo</a>
+                        <h:selectBooleanCheckbox id="menu" styleClass="hidden-checkbox"/>
+                        <!-- Label, que hace referencia al id-menu de arriba -->
+                        <label for="menu">
+                            <img src="resources/images/menu.png" class="menu-icono" alt=""/>
+                        </label>
+                        <!-- Para realizar la barra de navegación del Header -->
+                        <nav class="navbar">
+                            <ul>
+                                <li><h:link value="Index" outcome="index.xhtml" /></li>
+                                <li><h:link value="Éxito" outcome="exito.xhtml" /></li>
+                                <li><h:link value="Anualidades" outcome="anualidades.xhtml"/></li>
+                                <li><a href="http://www.github.com/fabienaraoz" target="_blank">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </h:form>
         
+        <h:outputLabel value="Hola, este es un output label para la aplicación de Java"/>
+        <h1>Calculadora de Anualidades</h1>
         <!-- Comenzamos a relaizar la tabla para los valores de las anualidades-->
         <div>
             <h:form>
                 <table>
                     <tr>
-                        <td><h:outputLabel for="pagoAnualildad" value="pagoAnualidad"/> </td>
+                        <td><h:outputLabel for="pagoAnualildad" value="Pago Anualidad "/> </td>
                         <td><h:inputText id="pagoAnualidad" value="#{formulas.pagoAnualidad}"/> </td>
                         <td><h:message for="pagoAnualidad"/></td>
                     </tr>
                     <tr>
-                        <td><h:outputLabel for="nPeriodos" value="nPeriodos"/> </td>
+                        <td><h:outputLabel for="nPeriodos" value="nº Periodos "/> </td>
                         <td><h:inputText id="nPeriodos" value="#{formulas.nPeriodos}"/> </td>
                         <td><h:message for="nPeriodos"/></td>
                     </tr>
                     <tr>
-                        <td><h:outputLabel for="tasa" value="tasa"/> </td>
+                        <td><h:outputLabel for="tasa" value="Tasa "/> </td>
                         <td><h:inputText id="tasa" value="#{formulas.tasa}"/> </td>
                         <td><h:message for="tasa"/></td>
                     </tr>
-                    
-                    <!--Agregamos el boton, También vamos a aplicar AJAX-->
-                    <h:commandButton action="#{calculadora.enviarAnualidades}" value="¡Calcular!" id="calculadora">
-                        <f:ajax execute="pagoAnualidad nPeriodos tasa" render="resultadito"/>
-                    </h:commandButton>
-                    
                 </table>
-                
-                <h:outputLabel value="Resultado: #{calculadora.anualidad_ordinaria(formulas)}" id="resultadito"/>
+                <!--Agregamos el boton, También vamos a aplicar AJAX-->
+                <h:commandButton action="#{calculadora.enviarAnualidades}" value="¡Calcular!" id="calculadora">
+                    <f:ajax execute="pagoAnualidad nPeriodos tasa" render="resultadito"/>
+                </h:commandButton>
             </h:form>
+            <h:outputLabel value="Resultado: #{calculadora.anualidad_ordinaria(formulas)}" id="resultadito"/>
         </div>
     </h:body>
 </html>
